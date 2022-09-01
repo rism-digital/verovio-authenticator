@@ -39,7 +39,7 @@ app.get( '/oauth/redirect', ( req, res ) =>
         const accessToken = response.data.access_token
         req.session.ghtoken = `${ accessToken }`;
         // redirect the user to the index page
-        res.redirect( `https://editor-test.verovio.org/index.html?login=true` )
+        res.redirect( `/index.html?login=true` )
     } )
 } );
 
@@ -47,7 +47,7 @@ app.get( '/oauth/logout', ( req, res ) =>
 {
     req.session = null;
     // redirect the user to the index page
-    res.redirect( `https://editor-test.verovio.org/index.html?login=false` )
+    res.redirect( `/index.html?login=false` )
 } );
 
 // Start the server on port 8081
